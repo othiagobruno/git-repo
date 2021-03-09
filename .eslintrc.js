@@ -1,6 +1,7 @@
 module.exports = {
     env: {
-        es2021: true,
+        browser: true,
+        node: true,
     },
     extends: [
         'plugin:react/recommended',
@@ -19,5 +20,15 @@ module.exports = {
     plugins: ['react', '@typescript-eslint'],
     rules: {
         'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
+        'import/extensions': 'off',
+        'prettier/prettier': ['error', { endOdLine: 'auto' }],
+    },
+    settings: {
+        'import/resolver': {
+            node: {
+                paths: ['src'],
+                extensions: ['.ts', '.tsx'],
+            },
+        },
     },
 };
